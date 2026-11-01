@@ -2,7 +2,6 @@
 
 Spotter ML assessment: predict `posted_rate` for Nov–Dec 2025 loads and a fixed Lexington → Fort Wayne December chart.
 
-Full write-up: [`reports/REPORT.md`](reports/REPORT.md) · PDF: [`reports/Freight_Rate_Validation_Report.pdf`](reports/Freight_Rate_Validation_Report.pdf)
 
 ## Approach
 
