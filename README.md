@@ -65,9 +65,3 @@ python score.py \
   --output-dir outputs
 ```
 
-## Submit
-
-- This repository (code + `requirements.txt` + README)
-- `outputs/validation_predictions.csv`
-- `reports/Freight_Rate_Validation_Report.pdf` (split/validation approach + December chart)
-- 2–3 minute Loom walkthrough
