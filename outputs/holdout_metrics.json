@@ -1,0 +1,157 @@
+{
+  "selected_model": "two_part",
+  "contamination_filter": {
+    "input_rows": 38477,
+    "contaminated_rows": 533,
+    "clean_rows": 37944,
+    "contaminated_pct": 1.3852431322608312,
+    "low_ratio": 0.5,
+    "high_ratio": 1.8
+  },
+  "full_train_clean_stats": {
+    "input_rows": 48000,
+    "contaminated_rows": 677,
+    "clean_rows": 47323,
+    "contaminated_pct": 1.4104166666666667,
+    "low_ratio": 0.5,
+    "high_ratio": 1.8
+  },
+  "two_part_holdout_full": {
+    "mae": 89.05173374640334,
+    "medae": 22.669353388225545,
+    "mape": 0.03947176757518413,
+    "rmse": 628.6056187323755
+  },
+  "two_part_holdout_clean": {
+    "mae": 32.96174574849323,
+    "medae": 22.237810562002323,
+    "mape": 0.014245683326104798,
+    "rmse": 47.16268572790316
+  },
+  "gbdt_summary": {
+    "baselines": {
+      "quote_signal_x_distance": {
+        "mae": 245.9597823192597,
+        "medae": 60.59738399999969,
+        "mape": 0.12096710201056181,
+        "rmse": 711.6539271509585
+      },
+      "equipment_mean_rpm_x_distance": {
+        "mae": 251.13380636324504,
+        "medae": 114.77871438655148,
+        "mape": 0.10741327789744144,
+        "rmse": 684.1139863420141
+      }
+    },
+    "candidates": [
+      {
+        "name": "lightgbm",
+        "scores": {
+          "mae": 116.03423333233843,
+          "medae": 37.24141048349361,
+          "mape": 0.04867832579102399,
+          "rmse": 636.7707681084919
+        },
+        "fit_seconds": 2.772457083000063,
+        "best_iteration": 706,
+        "params": {
+          "num_leaves": 31,
+          "min_child_samples": 50,
+          "learning_rate": 0.05,
+          "lambda_l2": 1.0
+        },
+        "target_mode": "absolute",
+        "scalability_rank": 1
+      },
+      {
+        "name": "xgboost",
+        "scores": {
+          "mae": 112.20214044390065,
+          "medae": 34.13687499999992,
+          "mape": 0.047141924393063944,
+          "rmse": 636.1081856972327
+        },
+        "fit_seconds": 1.9364518370000496,
+        "best_iteration": 293,
+        "params": {
+          "max_depth": 8,
+          "min_child_weight": 20,
+          "learning_rate": 0.05,
+          "reg_lambda": 1.0
+        },
+        "target_mode": "absolute",
+        "scalability_rank": 2
+      },
+      {
+        "name": "xgboost_rpm",
+        "scores": {
+          "mae": 109.1717934606484,
+          "medae": 35.25880112171171,
+          "mape": 0.046646447606156737,
+          "rmse": 634.1760831759095
+        },
+        "fit_seconds": 5.675485435999917,
+        "best_iteration": 845,
+        "params": {
+          "max_depth": 10,
+          "min_child_weight": 15,
+          "learning_rate": 0.03,
+          "reg_lambda": 1.0
+        },
+        "target_mode": "rpm",
+        "scalability_rank": 2
+      },
+      {
+        "name": "hist_gradient_boosting",
+        "scores": {
+          "mae": 119.0218318003234,
+          "medae": 39.58606125244978,
+          "mape": 0.05015320879381063,
+          "rmse": 637.598168935566
+        },
+        "fit_seconds": 3.418510460000107,
+        "best_iteration": 600,
+        "params": {
+          "max_depth": 8,
+          "learning_rate": 0.05,
+          "max_iter": 600,
+          "l2_regularization": 1.0
+        },
+        "target_mode": "absolute",
+        "scalability_rank": 3
+      }
+    ],
+    "selection_rule": "lowest MAE; if within 2% of best MAE, prefer LightGBM > XGBoost/XGBoost-RPM > HistGradientBoosting",
+    "selected_model": "xgboost_rpm",
+    "selected_target_mode": "rpm",
+    "selected_scores": {
+      "mae": 109.1717934606484,
+      "medae": 35.25880112171171,
+      "mape": 0.046646447606156737,
+      "rmse": 634.1760831759095
+    },
+    "selected_params": {
+      "max_depth": 10,
+      "min_child_weight": 15,
+      "learning_rate": 0.03,
+      "reg_lambda": 1.0
+    },
+    "selected_best_iteration": 845,
+    "selected_fit_seconds": 5.675485435999917
+  },
+  "model_meta": {
+    "name": "two_part",
+    "holdout_full": {
+      "mae": 89.05173374640334,
+      "medae": 22.669353388225545,
+      "mape": 0.03947176757518413,
+      "rmse": 628.6056187323755
+    },
+    "holdout_clean": {
+      "mae": 32.96174574849323,
+      "medae": 22.237810562002323,
+      "mape": 0.014245683326104798,
+      "rmse": 47.16268572790316
+    }
+  }
+}

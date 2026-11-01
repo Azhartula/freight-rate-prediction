@@ -1,0 +1,20 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Local scratch (keep committed submission artifacts under outputs/)
+*.log
+.ipynb_checkpoints/
